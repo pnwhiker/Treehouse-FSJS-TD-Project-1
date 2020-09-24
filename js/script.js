@@ -42,31 +42,41 @@ const quotesArray = [
 
 ];
 
-console.log(quotesArray);
-console.log(quotesArray.length);
+// console.log(quotesArray);
+// console.log(quotesArray.length);
 
 /***
  * `getRandomQuote` function
 ***/
 
 function getRandomQuote() {
-  const selectedNumber = Math.floor(Math.random() * quotesArray.length)+1;
+  const selectedNumber = (Math.floor(Math.random() * quotesArray.length) + 1);
   const quote = quotesArray[selectedNumber];
   return quote;
-  
+
 };
 
 const selectedQuote = getRandomQuote();
-
-console.log(selectedQuote);
+// console.log(selectedQuote);
 
 
 /***
  * `printQuote` function
 ***/
 
-function printQuote() {};
+function printQuote(selectedQuote) {
+  const quote = selectedQuote.quote;
+  const author = selectedQuote.author;
+  const citation = selectedQuote.citation;
+  const pubYear = selectedQuote.year;
 
+
+
+  console.log();
+
+};
+
+printQuote(selectedQuote);
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!

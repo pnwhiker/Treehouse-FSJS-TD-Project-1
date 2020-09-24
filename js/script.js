@@ -66,12 +66,13 @@ const selectedQuote = getRandomQuote();
 
 function printQuote() {
   const quote = selectedQuote.quote;
-  const author = selectedQuote.author;
+  const source = selectedQuote.author;
   const citation = selectedQuote.citation;
   const pubYear = selectedQuote.year;
-  const html = `<p class="quote">${quote}
-                <span> ${author} </span>
-                </p>`;
+  const html = `<p class = "quote" >${quote} </p>
+                <p> <span class = "source" > ${source}  </p>
+                <p> <span class = "citation" > ${citation}  </p>
+                <p> <span class = "year" > ${pubYear}  </p>`;
   console.log();
   document.getElementById('quote-box').innerHTML = html;
 };

@@ -50,7 +50,7 @@ const quotesArray = [
 ***/
 
 function getRandomQuote() {
-  const selectedNumber = (Math.floor(Math.random() * quotesArray.length) + 1);
+  const selectedNumber = (Math.floor(Math.random() * quotesArray.length))
   const quote = quotesArray[selectedNumber];
   return quote;
 
@@ -64,16 +64,16 @@ const selectedQuote = getRandomQuote();
  * `printQuote` function
 ***/
 
-function printQuote(selectedQuote) {
+function printQuote() {
   const quote = selectedQuote.quote;
   const author = selectedQuote.author;
   const citation = selectedQuote.citation;
   const pubYear = selectedQuote.year;
-
-
-
+  const html = `<p class="quote">${quote}
+                <span> ${author} </span>
+                </p>`;
   console.log();
-
+  document.getElementById('quote-box').innerHTML = html;
 };
 
 printQuote(selectedQuote);

@@ -47,7 +47,10 @@ const quotesArray = [
 
 function getRandomQuote() {
   const selectedNumber = (Math.floor(Math.random() * quotesArray.length))
+  let usedQuotes = [];
   const quote = quotesArray[selectedNumber];
+  usedQuotes.push(quote);
+  console.log(usedQuotes); 
   return quote;
 };
 

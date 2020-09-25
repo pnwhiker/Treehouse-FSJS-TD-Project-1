@@ -56,7 +56,7 @@ function getRandomQuote() {
 ***/
 
 function printQuote() {
-
+  const selectedQuote = getRandomQuote();
   const quote = selectedQuote.quote;
   const source = selectedQuote.author;
   const citation = selectedQuote.citation;
@@ -70,9 +70,9 @@ function printQuote() {
   document.getElementById('quote-box').innerHTML = html;
 };
 
-const selectedQuote = getRandomQuote();
+printQuote();
 
-printQuote(selectedQuote);
+
 
 /***
  * click event listener for the print quote button

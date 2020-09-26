@@ -4,7 +4,7 @@ project 1 - A Random Quote Generator
 ******************************************/
 
 
-const quotesArray = [
+let quotesArray = [
   {
     quote:'test quotation 1',
     author:'author 1',
@@ -32,13 +32,20 @@ const quotesArray = [
 ];
 
 const usedQuotes = [];
+let randomValue = (Math.floor(Math.random() * quotesArray.length))
 
 function getRandomQuote() {
-    const quote = quotesArray[(Math.floor(Math.random() * quotesArray.length))];    
-    quotesArray.pop(quote);
+  if (quotesArray.length > 0) {
+    let quote = quotesArray.pop(randomValue);
     usedQuotes.push(quote);
     return quote;
+  } else {
+    console.log(usedQuotes);
+  }
+    
+    
 };
+
 
 
 function printQuote() {

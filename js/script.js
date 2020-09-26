@@ -31,19 +31,13 @@ const quotesArray = [
   },
 ];
 
-
+const usedQuotes = [];
 
 function getRandomQuote() {
-  if (quotesArray.length == 0) {
-    quotesArray = usedQuotes;
-  } else {
-    const selectedNumber = (Math.floor(Math.random() * quotesArray.length))
-    const quote = quotesArray[selectedNumber];
-    const usedQuotes = [];
+    const quote = quotesArray[(Math.floor(Math.random() * quotesArray.length))];    
     quotesArray.pop(quote);
     usedQuotes.push(quote);
     return quote;
-  }
 };
 
 
@@ -54,10 +48,10 @@ function printQuote() {
   const citation = selectedQuote.citation;
   const pubYear = selectedQuote.year;
 
-  const html = `<p class = "quote" >${quote} </p>
-                <p> <span class = "source" > ${source}  </p>
-                <p> <span class = "citation" > ${citation}  </p>
-                <p> <span class = "year" > ${pubYear}  </p>`;
+  const html = `<p class = "quote"> ${quote} </p>
+                <p> <span class = "source"> ${source}  </p>
+                <p> <span class = "citation"> ${citation}  </p>
+                <p> <span class = "year"> ${pubYear}  </p>`;
   
   document.getElementById('quote-box').innerHTML = html;
 };

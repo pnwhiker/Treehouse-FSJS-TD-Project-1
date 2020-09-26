@@ -3,9 +3,6 @@ Treehouse FSJS Techdegree:
 project 1 - A Random Quote Generator
 ******************************************/
 
-/*** 
- * `quotes` array 
-***/
 
 const quotesArray = [
   {
@@ -32,31 +29,22 @@ const quotesArray = [
     citation:'source 4',
     year:'year 4'
   },
-
-  
-
-
 ];
 
-// console.log(quotesArray);
-// console.log(quotesArray.length);
 
-/***
- * `getRandomQuote` function
-***/
 
 function getRandomQuote() {
-  const selectedNumber = (Math.floor(Math.random() * quotesArray.length))
-  console.log(quotesArray.length)
-  const quote = quotesArray[selectedNumber];
-  quotesArray.pop(quote);
-  console.log(quotesArray.length)
-  return quote;
+  if (quotesArray.length == 0) {
+    quotesArray = usedQuotes;
+  } else {
+    const selectedNumber = (Math.floor(Math.random() * quotesArray.length))
+    const quote = quotesArray[selectedNumber];
+    const usedQuotes = [];
+    usedQuotes = quotesArray.pop(quote);
+    return quote;
+  }
 };
 
-/***
- * `printQuote` function
-***/
 
 function printQuote() {
   const selectedQuote = getRandomQuote();

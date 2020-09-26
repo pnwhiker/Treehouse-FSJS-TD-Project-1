@@ -40,7 +40,8 @@ function getRandomQuote() {
     const selectedNumber = (Math.floor(Math.random() * quotesArray.length))
     const quote = quotesArray[selectedNumber];
     const usedQuotes = [];
-    usedQuotes = quotesArray.pop(quote);
+    quotesArray.pop(quote);
+    usedQuotes.push(quote);
     return quote;
   }
 };

@@ -31,20 +31,30 @@ let quotesArray = [
   },
 ];
 
-const usedQuotes = [];
-let randomValue = (Math.floor(Math.random() * quotesArray.length))
+let usedQuotesIndex = [];
+
+function getRand () {
+  let randomValue = (Math.floor(Math.random() * quotesArray.length))
+  return randomValue;
+}
+
+function resetUsedQuotesIndex () {
+  usedQuotesIndex = [];
+}
 
 function getRandomQuote() {
-  if (quotesArray.length > 0) {
-    let quote = quotesArray.pop(randomValue);
-    usedQuotes.push(quote);
+    while (usedQuotesIndex.length <= quotesArray.length) {
+      let quoteIndex = getRand();
+      const quote = quotesArray[quoteIndex];
+      usedQuotesIndex.push(quoteIndex);
+      console.log(quoteIndex);
+      console.log(usedQuotesIndex);      
+    };
+    
     return quote;
-  } else {
-    console.log(usedQuotes);
-  }
+  }    
     
-    
-};
+
 
 
 

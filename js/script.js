@@ -32,20 +32,25 @@ let quotesArray = [
 ];
 
 const usedQuotes = [];
-let randomValue = (Math.floor(Math.random() * quotesArray.length))
 
-function getRandomQuote() {
-  if (quotesArray.length > 0) {
-    let quote = quotesArray.pop(randomValue);
-    usedQuotes.push(quote);
-    return quote;
-  } else {
-    console.log(usedQuotes);
-  }
-    
-    
+function randValue (upper) {
+  let randomValue = (Math.floor(Math.random() * upper))
+  return randomValue
 };
 
+function getRandomQuote() {
+  const quote = quotesArray[randValue(quotesArray.length)]
+
+  return quote;
+};
+
+
+
+function rgbReturn () {
+  let rgb = `rgb(${randValue(256)}, ${randValue(256)}, ${randValue(256)})`;
+  // console.log(rgb);
+  return rgb;
+}
 
 
 function printQuote() {
@@ -59,7 +64,8 @@ function printQuote() {
                 <p> <span class = "source"> ${source}  </p>
                 <p> <span class = "citation"> ${citation}  </p>
                 <p> <span class = "year"> ${pubYear}  </p>`;
-  
+
+  document.getElementById('body').style.backgroundColor = rgbReturn();
   document.getElementById('quote-box').innerHTML = html;
 };
 

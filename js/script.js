@@ -3,7 +3,6 @@ Treehouse FSJS Techdegree:
 project 1 - A Random Quote Generator
 ******************************************/
 
-
 let quotesArray = [
   {
     quote:'test quotation 1',
@@ -76,10 +75,16 @@ function printQuote() {
   const citation = selectedQuote.citation;
   const pubYear = selectedQuote.year;
 
-  const html = `<p class = "quote"> ${quote} </p>
-                <p> <span class = "source"> ${source}  </p>
-                <p> <span class = "citation"> ${citation}  </p>
-                <p> <span class = "year"> ${pubYear}  </p>`;
+  let html = `<p class = "quote"> ${quote} </p>
+                <p class = "quote"> ${source} </p>`;
+
+  if (selectedQuote.citation){
+    html += `<p> <span class = "citation"> ${citation}  </p>`;
+  };
+  
+  if (selectedQuote.year){
+    html += `<p> <span class = "year"> ${pubYear}  </p>`;
+  }
 
   document.getElementById('body').style.backgroundColor = rgbReturn();
   document.getElementById('quote-box').innerHTML = html;
@@ -88,6 +93,7 @@ function printQuote() {
 printQuote();
 
 
+window.setInterval(printQuote, 5000);
 
 /***
  * click event listener for the print quote button

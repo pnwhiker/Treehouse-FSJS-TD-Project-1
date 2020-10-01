@@ -39,8 +39,10 @@ function randValue (upper) {
 };
 
 function getRandomQuote() {
-  const quote = quotesArray[randValue(quotesArray.length)]
-
+  const quoteIndexVal = randValue(quotesArray.length);
+  console.log(`quoes index val = ${quoteIndexVal}`)
+  const quote = quotesArray[quoteIndexVal];
+  
   return quote;
 };
 

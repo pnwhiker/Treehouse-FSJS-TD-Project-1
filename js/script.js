@@ -33,8 +33,8 @@ let quotesArray = [
 
 let usedQuotesIndex = [];
 
-function getRand () {
-  let randomValue = (Math.floor(Math.random() * quotesArray.length))
+function getRand (upper) {
+  let randomValue = (Math.floor(Math.random() * upper))
   return randomValue;
 }
 
@@ -43,10 +43,7 @@ function resetUsedQuotesIndex () {
 }
 
 function getRandomQuote() {
-    while (usedQuotesIndex.length <= quotesArray.length) {
-      let quoteIndex = getRand();
-      const quote = quotesArray[quoteIndex];
-      usedQuotesIndex.push(quoteIndex);
+    
       console.log(quoteIndex);
       console.log(usedQuotesIndex);      
     };

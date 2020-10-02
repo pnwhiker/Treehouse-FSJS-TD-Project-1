@@ -5,22 +5,28 @@ project 1 - A Random Quote Generator
 
 let quotesArray = [
   {
-    quote:'test quotation 1',
-    author:'author 1',
-    citation:'source 1',
-    year:'year 1'
+    quote:"Sorry Goose, but it's time to buzz the tower.",
+    author:'Maverick',
+    citation:'TOP GUN',
+    year:'1986'
   },
   {
-    quote:'test quotation 2',
-    author:'author 2',
-    citation:'source ',
-    year:'year 2'
+    quote:'Have you ever danced with the devil by the pale moonlight?',
+    author:'The Joker',
+    citation:'BATMAN ',
+    year:'1989'
   },
   {
-    quote:'test quotation 3',
-    author:'author3 ',
-    citation:'source 3',
-    year:'year 3'
+    quote:'Roads? Where we’re going we don’t need roads.',
+    author:'Doc Emmett Brown',
+    citation:'Back To The Future',
+    year:'1985'
+  },
+  {
+    quote:'test quotation 4',
+    author:'author 4',
+    citation:'source 4',
+    year:'year 4'
   },
   {
     quote:'test quotation 4',
@@ -43,9 +49,10 @@ function randValue (upper) {
   return randomValue
 };
 
-getRandomQuote function assigns quote index to be selected using randomValue function,
-assigns quote selected to quote var, quote seleced is pushed into usedQuotes array, and spliced from
-quotesArray
+// getRandomQuote function assigns quote index to be selected using randomValue function,
+// assigns quote selected to quote var, quote seleced is pushed into usedQuotes array, and spliced from
+// quotesArray each time the function is executed.  if quotesArray.length = 0, usedQuotes' values are pushed into
+// quotesArray, and usedQuotes' values are spliced and not returned, emptying the array for reuse.
 
 function getRandomQuote() {
 

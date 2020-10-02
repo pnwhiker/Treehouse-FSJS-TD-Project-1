@@ -30,12 +30,22 @@ let quotesArray = [
   },
 ];
 
+// usedQuotes array is declared, this array will be used to store quotes following display
+// in body of page, and will be reset to empty when the quotesArray array becomes length = 0
+
 const usedQuotes = [];
+
+// randValue function returns random number between zero and upper limit supplied
+// as argument to the function, returns value to main as randomValue
 
 function randValue (upper) {
   let randomValue = (Math.floor(Math.random() * upper))
   return randomValue
 };
+
+getRandomQuote function assigns quote index to be selected using randomValue function,
+assigns quote selected to quote var, quote seleced is pushed into usedQuotes array, and spliced from
+quotesArray
 
 function getRandomQuote() {
 
@@ -44,14 +54,19 @@ function getRandomQuote() {
   const quote = quotesArray[quoteIndexVal];
   usedQuotes.push(quote);
   quotesArray.splice(quoteIndexVal, 1);
-  console.log(`used quotes array length = ${usedQuotes.length}`);
-  console.log(`fresh quotes array length = ${quotesArray.length}`);
-  
+  // console.log(`used quotes array length = ${usedQuotes.length}`);
+  // console.log(`fresh quotes array length = ${quotesArray.length}`);
+  if (quotesArray.length == 0) {
+    quotesArray.push(...usedQuotes);
+    usedQuotes.splice(0, usedQuotes.length)
+  } 
 
   return quote;
 };
 
-
+// rgbReturn function creates a properly formatted rgb value using output from 
+// randValue function being passed upper limit argument of 256, returns rgb to main
+// body element is selected in printQuote function with background color set to rgb
 
 function rgbReturn () {
   let rgb = `rgb(${randValue(256)}, ${randValue(256)}, ${randValue(256)})`;
@@ -59,6 +74,9 @@ function rgbReturn () {
   return rgb;
 }
 
+// printQuote function accepts quote from getRandomQuote, assigns each value (if present)
+// to a const, html is built using template literals with quote components and assigned to
+// html variable and returned to main
 
 function printQuote() {
   const selectedQuote = getRandomQuote();
@@ -84,6 +102,8 @@ function printQuote() {
 
 printQuote();
 
+// window.setInterval method will re-execute printquote function every 5000ms
+// refreshing oage window. new quote from quotesArray
 
 window.setInterval(printQuote, 5000);
 

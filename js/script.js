@@ -29,10 +29,10 @@ let quotesArray = [
     year:'year 4'
   },
   {
-    quote:'test quotation 4',
-    author:'author 4',
-    citation:'source 4',
-    year:'year 4'
+    quote:'test quotation 5',
+    author:'author 5',
+    citation:'source 5',
+    year:'year 5'
   },
 ];
 
@@ -93,7 +93,7 @@ function printQuote() {
   const pubYear = selectedQuote.year;
 
   let html = `<p class = "quote"> ${quote} </p>
-                <p class = "quote"> ${source} </p>`;
+                <p class = "source"> ${source} </p>`;
 
   if (selectedQuote.citation){
     html += `<p> <span class = "citation"> ${citation}  </p>`;

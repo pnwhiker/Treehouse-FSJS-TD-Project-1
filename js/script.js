@@ -40,22 +40,14 @@ function randValue (upper) {
 function getRandomQuote() {
 
   const quoteIndexVal = randValue(quotesArray.length);
-
-  console.log(`random quote index val = ${quoteIndexVal}`);
-
+  console.log(`quotes index val = ${quoteIndexVal}`)
   const quote = quotesArray[quoteIndexVal];
-  console.log(`random quote= ${quote}`)
-
   usedQuotes.push(quote);
-  console.log(`used quote array = ${usedQuotes.length}`);
+  quotesArray.splice(quoteIndexVal, 1);
+  console.log(`used quotes array length = ${usedQuotes.length}`);
+  console.log(`fresh quotes array length = ${quotesArray.length}`);
+  
 
-  quotesArray.splice(quoteIndexVal, 1)
-  console.log(`reworked quote array = ${quotesArray.length}`);
-
-  if (quotesArray.length == 0) {
-    quotesArray.push(...usedQuotes);
-    usedQuotes.splice(0, usedQuotes.length)
-  } 
   return quote;
 };
 

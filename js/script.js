@@ -23,17 +23,17 @@ let quotesArray = [
     year:'1985'
   },
   {
-    quote:'test quotation 4',
-    author:'author 4',
-    citation:'source 4',
-    year:'year 4'
+    quote:"Do or do not, there is no try.",
+    author:'Master Yoda',
+    citation:'The Empire Strikes Back',
+    year:'1980'
   },
   {
-    quote:'test quotation 5',
-    author:'author 5',
-    citation:'source 5',
-    year:'year 5'
-  },
+    quote:"It's 106 miles to Chicago, we got a full tank of gas, half a pack of cigarettes, it's dark, and we're wearing sunglasses.",
+    author:'Elwood Blues',
+    citation:'The Blues Brothers',
+    year:'1980'
+  }
 ];
 
 // usedQuotes array is declared, this array will be used to store quotes following display
@@ -112,7 +112,7 @@ printQuote();
 // window.setInterval method will re-execute printquote function every 5000ms
 // refreshing oage window. new quote from quotesArray
 
-window.setInterval(printQuote, 5000);
+window.setInterval(printQuote, 8000);
 
 /***
  * click event listener for the print quote button
